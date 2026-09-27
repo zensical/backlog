@@ -12,13 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Lock issue
-        uses: actions/github-script@v7
-        with:
-          script: |
-            await github.rest.issues.lock({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number
-            });
-
-            console.log(`Locked issue #${context.issue.number}`);
+        run: |
+          gh issue lock "${{ github.event.issue.number }}" --repo "${{ github.repository }}"
+          echo "Locked issue #${{ github.event.issue.number }}"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
