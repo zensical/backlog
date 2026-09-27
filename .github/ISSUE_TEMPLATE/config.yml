@@ -1,6 +1,1 @@
 blank_issues_enabled: false
-contact_links:
-  - name: "I'm not a Zensical team member"
-    url: https://github.com/zensical/zensical/issues/new/choose
-    about: >
-      Use our public issue tracker to report bugs and propose change requests
